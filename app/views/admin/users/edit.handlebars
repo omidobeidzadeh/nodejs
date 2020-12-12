@@ -1,0 +1,78 @@
+<!-- Page Headings Start -->
+<div class='row justify-content-between align-items-center mb-10'>
+  <!-- Page Heading Start -->
+  <div class='col-12 col-lg-auto mb-20'>
+    <div class='page-heading'>
+      <h3 class='title'>
+        مطالب
+        <span>
+          / ویرایش مطلب
+        </span>
+      </h3>
+    </div>
+  </div>
+  <!-- Page Heading End -->
+
+  <!-- Page Button Group End -->
+</div>
+<!-- Page Headings End -->
+
+<div class='row mbn-30'>
+  <!-- Revenue Statistics Chart Start -->
+  <div class='col-md-12 mb-30'>
+    <div class='box'>
+      <div class='box-head'>
+        <div class='row'>
+          <h4 class='title'>
+            اطلاعات مطلب
+          </h4>
+        </div>
+      </div>
+      <div class='box-body'>
+        <form method='POST' action="/admin/users/update/{{user.id}}">
+          {{#if hasError}}
+            <div class='alert alert-outline-secondary' role='alert'>
+              {{#each errors}}
+                <p>
+                  {{this}}
+                </p>
+              {{/each}}
+            </div>
+          {{/if}}
+          <div class='row mbn-20'>
+            <div class="col-12 mb-20">
+                      <input value="{{user.full_name}}" name="full_name" type="text" id="formLayoutUsername3" class="form-control" placeholder="نام کاربر" />
+                    </div>
+                    <div class="col-12 mb-20">
+                      <input value="{{user.email}}" name="email" type="email" id="formLayoutEmail3" class="form-control" placeholder="ایمیل کاربر" />
+                    </div>
+                    <div class="col-12 mb-20">
+                      <input value="{{user.password}}" name="password" type="password" id="formLayoutEmail3" class="form-control" placeholder="پسورد کاربر" />
+                    </div>
+
+
+            <div class="col-12 mb-20">
+                      <h6 class="mb-15">نقش کاربری</h6>
+                      <div class="form-group">
+                        <label class="inline"><input name="role" value="0" type="radio" {{#IsUserRole 0}}checked{{/IsUserRole}}/>کاربری</label>
+                        <label class="inline"><input name="role" value="2" type="radio" {{#IsUserRole 2}}checked{{/IsUserRole}}/>نویسنده</label>
+                        <label class="inline"><input name="role" value="1" type="radio" {{#IsUserRole 1}}checked{{/IsUserRole}}/>مدیر</label>
+                      </div>
+                    </div>
+
+            
+
+            <div class='col-12 mb-20'>
+              <input
+                type='submit'
+                value='ذخیره سازی'
+                class='button button-primary'
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Revenue Statistics Chart End -->
+</div>
